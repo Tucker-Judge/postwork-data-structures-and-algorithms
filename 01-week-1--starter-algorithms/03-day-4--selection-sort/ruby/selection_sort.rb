@@ -1,5 +1,19 @@
 def selection_sort(arr)
-  # type your code in here
+  # new arrat
+  sorted = []
+  # length
+  length = arr.length
+  # iterate
+  length.times do 
+    # lowest number in array
+    min = arr.min
+    # append to sorted
+    sorted << min
+    # delete in prev array
+    arr.delete_at(arr.index[min])
+  end
+  # implicit return
+  sorted
 end
 
 if __FILE__ == $PROGRAM_NAME

@@ -1,5 +1,16 @@
 def selection_sort_recursive(arr)
-  # type your code in here
+  # find the lowest and put that in first position
+  
+  # minimum
+  min = arr.min
+  # index of minimum
+  idx = arr.index(min)
+  # deleting that index
+  arr.delete_at(idx)
+  # run this recursively
+  result = selection_sort_recursive(arr)
+  # return ^ to front of array
+  result.unshift(min)
 end
 
 if __FILE__ == $PROGRAM_NAME

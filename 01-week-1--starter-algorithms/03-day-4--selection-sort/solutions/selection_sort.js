@@ -2,6 +2,7 @@ function selectionSort(arr) {
   const sorted = [];
 
   while (arr.length > 0) {
+    // 
     const min = Math.min(...arr);
     const idx = arr.indexOf(min);
 
@@ -10,6 +11,26 @@ function selectionSort(arr) {
   }
 
   return sorted;
+}
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    // get index
+    let minIdx = i;
+    // loop through and compare
+    for (let j = i + 1; j < arr.length; j++) {
+      // if j index is less than minIdx then minIdx is = to the j
+      if (arr[j] < arr[minIdx]) {
+        minIdx = j;
+      }
+    }
+    // minIdx is changed then change the arr value
+    if (minIdx !== i) {
+      // destructuring arrays
+      [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
+    }
+  }
+  // return arr
+  return arr;
 }
 
 if (require.main === module) {

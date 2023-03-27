@@ -1,5 +1,13 @@
 function findShortestString(arr) {
-  // type your code here
+  const sorted = []
+  for (let i = 0; i < arr.length; i++){
+    for (let j = 0; j < arr.length; j++){
+      if (arr[j].length < arr[i].length){
+        sorted. push(arr[j])
+      }
+    }
+  }
+  return sorted
 }
 
 if (require.main === module) {

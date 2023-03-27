@@ -2,7 +2,8 @@ function recursiveSearch(arr, target) {
   if (arr.length === 0) {
     return false;
   }
-
+  let mid = arr.length / 2
+  
   if (arr[0] === target) {
     return true;
   }

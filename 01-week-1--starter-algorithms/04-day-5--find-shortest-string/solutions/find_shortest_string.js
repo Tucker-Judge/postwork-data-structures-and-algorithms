@@ -13,6 +13,9 @@ function findShortestString(arr) {
   return arr.reduce((shortest, string) => 
     string.length < shortest.length ? string : shortest);
 }
+// optimized version
+return arr.reduce((shortest, string) => 
+  string.length < shortest.length ? string : shortest);
 
 if (require.main === module) {
   // add your own tests in here

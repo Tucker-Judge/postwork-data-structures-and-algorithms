@@ -1,6 +1,15 @@
-def fibonacci(n)
-  # type your code in here
-end
+
+  def fibonacci(n, memo = {})
+  
+  return n if n < 2
+
+  return memo[n] if memo[n]
+
+  memo[n] = fibonacci(n-1, memo) + fibonacci(n-2,memo)
+
+  return memo[n]
+  end
+puts fibonacci(9)
 
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 0"

@@ -12,6 +12,16 @@ def find_first_duplicate(arr)
   -1
 end
 
+# more concise
+def find_first_duplicate(arr)
+  uniques = Set.new
+
+  arr.each { |value| return value if uniques.add?(value).nil? }
+
+  -1
+end
+
+
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 3"
   puts find_first_duplicate([2, 1, 3, 3, 2])

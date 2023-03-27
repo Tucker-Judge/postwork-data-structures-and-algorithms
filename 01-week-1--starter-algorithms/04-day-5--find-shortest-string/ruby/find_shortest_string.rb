@@ -1,6 +1,18 @@
 def find_shortest_string(arr)
-  # type your code in here
+  # same as latter
+  arr.min_by(&:length)
 end
+
+def find_shortest_string(arr)
+  
+  arr.reduce("") do |shortest, str|
+    #shortest contains shortest value
+    # str contains current value mapped
+    string.length < shortest.length ? str : shortest
+  end
+end
+# je ne crois pas vous peut lire quoi la
+# je vous remerci!
 
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 'a'"

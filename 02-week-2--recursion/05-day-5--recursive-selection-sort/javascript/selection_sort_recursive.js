@@ -1,5 +1,20 @@
 function selectionSortRecursive(arr) {
-  // type your code here
+  if (arr.length == 0){
+    return []
+  }
+  // minimum
+  const min = Math.min(arr)
+  // idx
+  const idx = arr.indexOf(min)
+  // delete
+  arr.splice(idx, 1)
+
+  // initialize stack
+  const result = selectionSortRecursive(arr)
+  // populate array from bottom of stack up
+  result.unshift(min)
+  // return result
+  return result
 }
 
 if (require.main === module) {

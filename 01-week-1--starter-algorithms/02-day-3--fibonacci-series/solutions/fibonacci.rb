@@ -11,6 +11,26 @@ def fibonacci(num)
   last_two.last
 end
 
+def fibonacci(num)
+  return num if num < 2
+
+  prev1, prev2 = 0, 1
+  (num - 1).times do
+    prev1, prev2 = prev2, prev1 + prev2
+  end
+
+  prev2
+end
+Here are the changes made and the rationale behind them:
+
+Instead of initializing last_two with [0, 1] and accessing the last element using an index (last_two[num]), we can directly initialize prev1 and prev2 with 0 and 1, respectively, and use them to compute the next Fibonacci number in a loop.
+
+We can return num directly if it is less than 2, since the Fibonacci sequence starts with 0 and 1.
+
+We can use a parallel assignment to update prev1 and prev2 in one line, instead of using a temporary variable sum and an array assignment last_two = [last_two[1], sum].
+
+By making these changes, we can simplify the code and avoid unnecessary array operations.
+
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 0"
   puts fibonacci(0)

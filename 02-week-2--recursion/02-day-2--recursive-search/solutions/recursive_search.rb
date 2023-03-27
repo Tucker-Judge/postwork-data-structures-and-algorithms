@@ -4,6 +4,7 @@ def recursive_search(arr, target)
 
   recursive_search(arr[1..-1], target)
 end
+# absolutely fascinating
 
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: true"

@@ -11,6 +11,19 @@ def selection_sort(arr)
   sorted
 end
 
+def selection_sort(arr)
+  sorted = []
+  length = arr.length
+
+  length.times do
+    min = arr.min
+    sorted << min
+    arr.delete_at(arr.index(min))
+  end
+
+  sorted
+end
+
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: [-1, 2, 3, 5]"
   print selection_sort([3, -1, 5, 2])

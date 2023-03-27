@@ -11,9 +11,19 @@ def find_shortest_string(arr)
   # return shortest
 
   arr.reduce do |shortest, string| 
+    # 
     string.length < shortest.length ? string : shortest
   end
 end
+def find_shortest_string(arr)
+  arr.min_by(&:length)
+  # &:length short for {|something| string.length}
+end
+Here are the changes made and the rationale behind them:
+
+We can use the min_by method to find the shortest string in the array. This method returns the element with the minimum value, based on the block passed as an argument. In this case, we are passing the &:length shorthand syntax, which is equivalent to { |string| string.length }.
+
+By using min_by, we can eliminate the need for a loop, an external variable to hold the shortest string, and a conditional statement to check if the current string is shorter than the current shortest string. This makes the code more concise, easier to read, and more efficient.
 
 if __FILE__ == $PROGRAM_NAME
   puts "Expecting: 'a'"

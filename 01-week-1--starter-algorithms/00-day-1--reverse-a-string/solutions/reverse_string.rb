@@ -7,6 +7,24 @@ def reverse_string(str)
 
   reversed_str
 end
+# Optimized version 1: Using reduce and concatenation
+def reverse_string_v1(str)
+  str.chars.reduce("") { |reversed_str, char| char + reversed_str }
+end
+
+# Optimized version 2: Using reduce and String#prepend
+def reverse_string_v2(str)
+  str.chars.reduce("") { |reversed_str, char| reversed_str.prepend(char) }
+end
+
+# Optimized version 3: Using byte array swapping (for ASCII-encoded strings only)
+def reverse_string_v3(str)
+  str_bytes = str.bytes
+  # reversing them by forward and backward and switching
+  (str_bytes.length / 2).times { |i| str_bytes[i], str_bytes[-i - 1] = str_bytes[-i - 1], str_bytes[i] }
+  str_bytes.pack("C*")
+end
+
 
 puts "Expecting: 'ih'"
 puts reverse_string('hi')
